@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\SingerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+<<<<<<< Updated upstream
 // Route::resource('/admin', )
+=======
+Route::resource('/admin/singers', SingerController::class);
+>>>>>>> Stashed changes
