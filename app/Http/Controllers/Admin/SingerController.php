@@ -26,7 +26,7 @@ class SingerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.singers.create');
     }
 
     /**
@@ -37,7 +37,19 @@ class SingerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* $val_data = $request->validated(); */
+        $data = [
+            "name" => $request->name,
+            "surname" => $request->surname,
+            "birth_date" => $request->birth_date,
+            "record_company" => $request->record_company,
+            "genre" => $request->genre,
+        ];
+
+        Singer::create($data);
+
+        // return to a get route POST/REDIRECT/GET
+        return to_route('singers.index')->with('message', "Singer: " . $data['name'] . "created succesfully");
     }
 
     /**
