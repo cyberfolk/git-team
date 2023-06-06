@@ -16,8 +16,5 @@ use App\Http\Controllers\Admin\SingerController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-<<<<<<< Updated upstream
 // Route::resource('/admin', )
-=======
 Route::resource('/admin/singers', SingerController::class);
->>>>>>> Stashed changes
