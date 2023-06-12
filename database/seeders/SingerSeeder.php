@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Models\Singer;
+use Illuminate\Support\Str;
 
 class SingerSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class SingerSeeder extends Seeder
             $singer->name = $faker->name;
             $singer->surname = $faker->lastName();
             $singer->birth_date = $faker->date('Y-m-d');
-            $singer->genre = $faker->randomElement(['latino', 'metal', 'rock', 'pop']);
+            $singer->slug = Str::slug($singer->name, '-');
             $singer->record_company = $faker->company();
             $singer->save();
         }
