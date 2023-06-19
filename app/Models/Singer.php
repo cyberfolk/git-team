@@ -9,16 +9,9 @@ use Illuminate\Support\Str;
 
 class Singer extends Model
 {
-    protected $fillable = [
-        "name",
-        "surname",
-        "birth_date",
-        "record_company",
-        "genre"
-    ];
 
     use HasFactory;
-    protected $fillable = ['name', 'surname', 'birth_date', 'genre', 'record_company', 'genre_id'];
+    protected $fillable = ['name', 'surname', 'birth_date', 'record_company', 'genre_id'];
 
     public static function generateSlug($name)
     {
@@ -28,5 +21,5 @@ class Singer extends Model
     {
         return $this->belongsTo(Genre::class);
     }
-    
+
 }
